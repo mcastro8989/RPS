@@ -15,20 +15,25 @@
 //      console.log("Scissors");
 //  }
 
-let answer = prompt("Please enter either 'Rock', 'Paper', or 'Scissors': ").toLowerCase
+let answer = prompt("Please enter either 'Rock', 'Paper', or 'Scissors': ").toLowerCase();
 
-let humanChoice = getHumanChoice(answer)
+let humanChoice = getHumanChoice(answer);
 
-  function getHumanChoice() {
-       if (answer == "rock") {
-        console.log("You Picked Rock!");
-       } else if (answer == "paper") {
-        console.log("You Picked Paper");
+  function getHumanChoice(answer) {
+       if (answer == "rock".toLowerCase()) {
+            console.log("You Picked Rock!");
+       } else if (answer == "paper".toLowerCase()) {
+            console.log("You Picked Paper");
+       } else if (answer == "scissors".toLowerCase()) {
+          console.log("You Picked Scissors!");
        } else {
-        console.log("You Picked Scissors!");
+          console.log("Thats Not a Valid Choice!");
        }
   }
 
+
+let humanScore = 0
+let computerScore = 0
 
 
 
