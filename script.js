@@ -7,7 +7,7 @@ function getComputerChoice() {
 
 let computerChoice = getComputerChoice();
 
-function computerPick(computerChoice) {
+function computerString(computerChoice) {
      if (computerChoice == 0) {
           return "rock"; 
       } else if (computerChoice == 1) {
@@ -19,6 +19,8 @@ function computerPick(computerChoice) {
       }      
 }
 
+let computerFinal = computerString(computerChoice);
+console.log(computerFinal);
 
  
   function getHumanChoice(answer) {
