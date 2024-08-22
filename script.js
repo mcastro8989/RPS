@@ -40,56 +40,63 @@ console.log(computerFinal);
 
 
 
-// let humanChoice = getHumanChoice(answer);
+let humanScoreCount = localStorage.getItem('humanScore');
+
+if (!humanScoreCount) {
+     humanScoreCount = 0;
+}
+
+function addHumanScore() {
+     localStorage.setItem('humanScore', ++humanScoreCount);
+     console.log(`The Score is ${humanScoreCount} to ${computerScoreCount}`)
+}
 
 
-// function test(answer) {
-//      if (answer == "rock") {
-//           console.log("true")
-//      } else {
-//           console.log("false")
-//      }
-// }
 
-// test(answer)
+let computerScoreCount = localStorage.getItem('computerScore');
+
+if (!computerScoreCount) {
+     computerScoreCount = 0;
+}
+
+function addComputerScore() {
+     localStorage.setItem('computerScore', ++computerScoreCount);
+     console.log(`The Score is ${humanScoreCount} to ${computerScoreCount}`)
+}
 
 
-let humanScore = 0
-let computerScore = 0
 
 function playRound(answer, computerFinal) {
      if (answer == "rock" && computerFinal == "scissors") {
           console.log("You Win! Rock Beats Scissors!");
-          console.log(`The Score is ${humanScore +1} to ${computerScore}`);
+          addHumanScore();
      } else if (answer == "rock" && computerFinal == "paper") {
           console.log("You Lose! Paper Beats Rock!");
-          console.log(`The Score is ${humanScore} to ${computerScore + 1}`);
+          addComputerScore();
      } else if (answer == "rock" && computerFinal == "rock") {
           console.log("Its a Tie!");
-          console.log(`The Score is ${humanScore} to ${computerScore}`);
+          console.log(`The Score is ${humanScoreCount} to ${computerScoreCount}`);
      } else if (answer == "paper" && computerFinal == "scissors") {
           console.log("You Lose! Scissors Beats Paper!");
-          console.log(`The Score is ${humanScore} to ${computerScore + 1}`);
+          addComputerScore();
      } else if (answer == "paper" && computerFinal == "rock") {
-          console.log("You Win! Paper Beats Rock!"); 
-          console.log(`The Score is ${humanScore +1} to ${computerScore}`);
+          console.log("You Win! Paper Beats Rock!");
+          addHumanScore();
      } else if (answer == "paper" && computerFinal == "paper") {
           console.log("Its a Tie!");
-          console.log(`The Score is ${humanScore} to ${computerScore}`)
+          console.log(`The Score is ${humanScoreCount} to ${computerScoreCount}`)
      } else if (answer == "scissors" && computerFinal == "paper") {
           console.log("You Win! Scissors Beats Paper");
-          console.log(`The Score is ${humanScore +1} to ${computerScore}`)
+          addHumanScore();
      } else if (answer == "scissors" && computerFinal == "rock") {
           console.log("You Lose! Rock Beats Scissors");
-          console.log(`The Score is ${humanScore} to ${computerScore + 1}`)
+          addComputerScore();
      } else if (answer == "scissors" && computerFinal == "scissors") {
           console.log("Its a Tie!");
-          console.log(`The Score is ${humanScore} to ${computerScore}`)
+          console.log(`The Score is ${humanScoreCount} to ${computerScoreCount}`)
      } else {
           console.log("Thats Not How You Play!");
      }
 }
 
 playRound(answer, computerFinal);
-
-
