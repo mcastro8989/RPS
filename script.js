@@ -35,34 +35,61 @@ console.log(computerFinal);
        }
   }
 
-let humanChoice = getHumanChoice(answer);
+
+  getHumanChoice(answer)
+
+
+
+// let humanChoice = getHumanChoice(answer);
+
+
+// function test(answer) {
+//      if (answer == "rock") {
+//           console.log("true")
+//      } else {
+//           console.log("false")
+//      }
+// }
+
+// test(answer)
+
 
 let humanScore = 0
 let computerScore = 0
 
-
-function playRound(humanChoice, computerChoice) {
-     if (humanChoice == "rock".toLowerCase() && computerChoice == "scissors") {
+function playRound(answer, computerFinal) {
+     if (answer == "rock" && computerFinal == "scissors") {
           console.log("You Win! Rock Beats Scissors!");
-     } else if (humanChoice == "rock".toLowerCase() && computerChoice == "paper") {
+          console.log(`The Score is ${humanScore +1} to ${computerScore}`);
+     } else if (answer == "rock" && computerFinal == "paper") {
           console.log("You Lose! Paper Beats Rock!");
-     } else if (humanChoice == "rock".toLowerCase() && computerChoice == "rock") {
+          console.log(`The Score is ${humanScore} to ${computerScore + 1}`);
+     } else if (answer == "rock" && computerFinal == "rock") {
           console.log("Its a Tie!");
-     } else if (humanChoice == "paper".toLowerCase() && computerChoice == "scissors") {
+          console.log(`The Score is ${humanScore} to ${computerScore}`);
+     } else if (answer == "paper" && computerFinal == "scissors") {
           console.log("You Lose! Scissors Beats Paper!");
-     } else if (humanChoice == "paper".toLowerCase() && computerChoice == "rock") {
+          console.log(`The Score is ${humanScore} to ${computerScore + 1}`);
+     } else if (answer == "paper" && computerFinal == "rock") {
           console.log("You Win! Paper Beats Rock!"); 
-     } else if (humanChoice == "paper".toLowerCase() && computerChoice == "paper") {
+          console.log(`The Score is ${humanScore +1} to ${computerScore}`);
+     } else if (answer == "paper" && computerFinal == "paper") {
           console.log("Its a Tie!");
-     } else if (humanChoice == "scissors".toLowerCase() && computerChoice == "paper") {
+          console.log(`The Score is ${humanScore} to ${computerScore}`)
+     } else if (answer == "scissors" && computerFinal == "paper") {
           console.log("You Win! Scissors Beats Paper");
-     } else if (humanChoice == "scissors".toLowerCase() && computerChoice == "rock") {
+          console.log(`The Score is ${humanScore +1} to ${computerScore}`)
+     } else if (answer == "scissors" && computerFinal == "rock") {
           console.log("You Lose! Rock Beats Scissors");
-     } else if (humanChoice == "scissors".toLowerCase() && computerChoice == "scissors") {
+          console.log(`The Score is ${humanScore} to ${computerScore + 1}`)
+     } else if (answer == "scissors" && computerFinal == "scissors") {
           console.log("Its a Tie!");
+          console.log(`The Score is ${humanScore} to ${computerScore}`)
      } else {
           console.log("Thats Not How You Play!");
      }
 }
 
-playRound(humanChoice, computerChoice);
+playRound(answer, computerFinal);
+
+
