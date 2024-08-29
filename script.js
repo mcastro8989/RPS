@@ -1,3 +1,5 @@
+localStorage.clear();
+
 let answer = prompt("Please enter either 'Rock', 'Paper', or 'Scissors' : ").toLowerCase();
 
 
@@ -20,6 +22,7 @@ function computerString(computerChoice) {
 }
 
 let computerFinal = computerString(computerChoice);
+
 console.log(computerFinal);
 
  
@@ -36,7 +39,7 @@ console.log(computerFinal);
   }
 
 
-  getHumanChoice(answer)
+  getHumanChoice(answer);
 
 
 
@@ -100,3 +103,64 @@ function playRound(answer, computerFinal) {
 }
 
 playRound(answer, computerFinal);
+
+function winLoseMessage() {
+     if (humanScoreCount > computerScoreCount) {
+          console.log("You Win The Game!")
+     } else if (computerScoreCount > humanScoreCount) {
+          console.log("Sorry, You Lose The Game!")
+     } else if (computerScoreCount == humanScoreCount) {
+          console.log("Its A Tie!")
+     } else {
+          console.log("???")
+     }
+}
+
+function playGame() {
+     for (var i = 0; i <= 3; i++) {
+          let answer = prompt("Please enter either 'Rock', 'Paper', or 'Scissors' : ").toLowerCase();
+          function getComputerChoice() {
+               return Math.floor(Math.random() * 3);
+           }
+           
+           let computerChoice = getComputerChoice();
+           
+           function computerString(computerChoice) {
+                if (computerChoice == 0) {
+                     return "rock"; 
+                 } else if (computerChoice == 1) {
+                     return "paper";
+                 } else if (computerChoice == 2) {
+                     return "scissors";
+                 } else {
+                     return "Invalid";
+                 }      
+           }
+           
+           let computerFinal = computerString(computerChoice);
+           
+           console.log(computerFinal);
+
+           function getHumanChoice(answer) {
+               if (answer == "rock".toLowerCase()) {
+                    console.log("You Picked Rock!");
+               } else if (answer == "paper".toLowerCase()) {
+                    console.log("You Picked Paper");
+               } else if (answer == "scissors".toLowerCase()) {
+                  console.log("You Picked Scissors!");
+               } else {
+                  console.log("Thats Not a Valid Choice!");
+               }
+          }
+        
+          getHumanChoice(answer);
+
+          playRound(answer, computerFinal);
+
+     }
+
+     winLoseMessage();
+}
+
+playGame(answer, computerFinal);
+
